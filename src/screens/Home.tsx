@@ -16,7 +16,8 @@ export const Home: React.FC = () => {
   return (
     <Container
       edges={['bottom', 'left', 'right', 'top']}
-      style={styles.container}>
+      style={styles.container}
+      testID={homeTestIDs.homeScreen}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Home</Text>
       </View>

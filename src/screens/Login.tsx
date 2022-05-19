@@ -46,7 +46,8 @@ export const Login: React.FC = () => {
   return (
     <Container
       edges={['bottom', 'left', 'right', 'top']}
-      style={styles.container}>
+      style={styles.container}
+      testID={loginTestIDs.loginScreen}>
       <ScrollView
         contentContainerStyle={styles.scrollContainer}
         style={styles.scroll}>
