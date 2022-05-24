@@ -1,13 +1,6 @@
 import 'webdriverio';
 
-export const config: WebdriverIO.Config = {
-  //
-  // ====================
-  // Runner Configuration
-  // ====================
-  //
-  runner: 'local',
-  //
+export const sharedConfig: WebdriverIO.Config = {
   // ==================
   // Specify Test Files
   // ==================
@@ -50,28 +43,7 @@ export const config: WebdriverIO.Config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  capabilities: [
-    {
-      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-      // grid with only 5 firefox instances available you can make sure that not more than
-      // 5 instances get started at a time.
-      maxInstances: 5,
-      //
-      browserName: 'chrome',
-      acceptInsecureCerts: true,
-      // If outputDir is provided WebdriverIO can capture driver session logs
-      // it is possible to configure which logTypes to include/exclude.
-      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-      // excludeDriverLogs: ['bugreport', 'server'],
-      'goog:chromeOptions': {
-        args: ['--incognito'],
-      },
-      // 'wdio:devtoolsOptions': {
-      //   headless: true,
-      // },
-      platformName: 'web',
-    },
-  ],
+  capabilities: [],
   //
   // ===================
   // Test Configurations
@@ -170,7 +142,6 @@ export const config: WebdriverIO.Config = {
     ignoreUndefinedDefinitions: false,
     logLevel: 'info',
   },
-
   //
   // =====
   // Hooks
