@@ -7,13 +7,16 @@ Given(/^The user is on Login page$/, async function () {
   await LoginScreen.waitForIsShown();
 });
 
-When(/^User types (.+) in login input$/, async function (login: string) {
+When('User types {string} in login input', async function (login: string) {
   await LoginScreen.enterLogin(login);
 });
 
-When(/^User types (.+) in password input$/, async function (password: string) {
-  await LoginScreen.enterPassword(password);
-});
+When(
+  'User types {string} in password input',
+  async function (password: string) {
+    await LoginScreen.enterPassword(password);
+  },
+);
 
 When(/^User clicks sign in button$/, async function () {
   await LoginScreen.clickSignIn();
