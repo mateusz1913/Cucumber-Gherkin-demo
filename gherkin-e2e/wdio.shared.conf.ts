@@ -141,6 +141,8 @@ export const sharedConfig: WebdriverIO.Config = {
     // <boolean> Enable this config to treat undefined definitions as warnings.
     ignoreUndefinedDefinitions: false,
     logLevel: 'info',
+    maxInstances: 10,
+    specs: ['./gherkin-e2e/**/*.feature'],
   },
   //
   // =====

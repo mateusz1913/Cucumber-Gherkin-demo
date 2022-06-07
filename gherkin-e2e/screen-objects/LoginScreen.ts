@@ -31,6 +31,8 @@ class LoginScreen extends BaseScreen {
 
   enterPassword = async (password: string) => {
     await (await this.passwordInput).setValue(password);
+    // driver.hideKeyboard does not work on iOS, so instead just click "anywhere" outside
+    await (await this.getElement(loginTestIDs.loginScreen)).click();
   };
 
   clickSignIn = async () => {

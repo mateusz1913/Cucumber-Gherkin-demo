@@ -37,6 +37,15 @@ class BaseScreen {
     }
     return false;
   };
+
+  waitForIsShown = async (isShown = true): Promise<boolean | void> => {
+    if (!this.selector) {
+      throw new Error(
+        'No selector passed in for BaseScreen - unable to access page-level waitForIsShown',
+      );
+    }
+    return this.getElement(this.selector).waitForDisplayed({reverse: !isShown});
+  };
 }
 
 export default BaseScreen;

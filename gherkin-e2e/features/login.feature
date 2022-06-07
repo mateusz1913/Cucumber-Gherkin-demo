@@ -12,7 +12,7 @@ Examples:
   | login   | password |
   | gherkin | test     |
 
-Scenario: User provides incorrect credentials, when trying to sign in
+Scenario Outline: User provides incorrect credentials, when trying to sign in
   When User types "incorrectLogin" in login input
   And User types "incorrectPassword" in password input
   And User clicks sign in button

@@ -25,9 +25,6 @@ export const config: WebdriverIO.Config = {
       'goog:chromeOptions': {
         args: ['--incognito'],
       },
-      // 'wdio:devtoolsOptions': {
-      //   headless: true,
-      // },
       platformName: 'web',
     },
   ],

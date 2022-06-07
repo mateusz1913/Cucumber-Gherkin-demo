@@ -4,7 +4,7 @@ import LoginScreen from '../screen-objects/LoginScreen';
 
 Given(/^The user is on Login page$/, async function () {
   await LoginScreen.openUrl();
-  await LoginScreen.isShown();
+  await LoginScreen.waitForIsShown();
 });
 
 When(/^User types (.+) in login input$/, async function (login: string) {
@@ -20,9 +20,11 @@ When(/^User clicks sign in button$/, async function () {
 });
 
 Then(/^User should land on Home page$/, async function () {
-  await HomeScreen.isShown();
+  await HomeScreen.waitForIsShown();
+  await driver.pause(1000);
 });
 
 Then(/^App should display invalid credentials error$/, async function () {
   await LoginScreen.getElementByPartialText('Invalid credentials');
+  await driver.pause(5000);
 });
