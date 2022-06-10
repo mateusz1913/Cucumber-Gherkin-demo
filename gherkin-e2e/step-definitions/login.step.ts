@@ -3,7 +3,6 @@ import HomeScreen from '../screen-objects/HomeScreen';
 import LoginScreen from '../screen-objects/LoginScreen';
 
 Given(/^The user is on Login page$/, async function () {
-  await LoginScreen.openUrl();
   await LoginScreen.waitForIsShown();
 });
 

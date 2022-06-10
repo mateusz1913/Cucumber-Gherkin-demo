@@ -1,5 +1,4 @@
 import {loginTestIDs} from '../../src/testIDs';
-import {isDesktopWeb} from '../utils/DriverUtils';
 import BaseScreen from './BaseScreen';
 
 class LoginScreen extends BaseScreen {
@@ -18,12 +17,6 @@ class LoginScreen extends BaseScreen {
   private get signInButton() {
     return this.getElement(loginTestIDs.signInButton);
   }
-
-  openUrl = async () => {
-    if (isDesktopWeb) {
-      await browser.url('/');
-    }
-  };
 
   enterLogin = async (login: string) => {
     await (await this.loginInput).setValue(login);

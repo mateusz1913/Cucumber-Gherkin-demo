@@ -7,16 +7,18 @@ import {isMobile} from '../utils/DriverUtils';
  * On mobile launches and terminates app between each scenario
  */
 
-Before(function () {
+Before(async function () {
   if (isMobile) {
     // If you have different app/bundle id on different platforms, remember to change it here
-    driver.activateApp('com.gherkindemo');
+    await driver.activateApp('com.gherkindemo');
+  } else {
+    await driver.url('/');
   }
 });
 
-After(function () {
+After(async function () {
   if (isMobile) {
     // If you have different app/bundle id on different platforms, remember to change it here
-    driver.terminateApp('com.gherkindemo');
+    await driver.terminateApp('com.gherkindemo');
   }
 });
